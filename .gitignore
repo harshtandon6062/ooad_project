@@ -1,4 +1,9 @@
 node_modules/
-database.sqlite
 *.sqlite
+*.sqlite-shm
+*.sqlite-wal
 .env
+*.webp
+*.mp4
+walkthrough.md
+implementation_plan.md
