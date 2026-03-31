@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card shadow border-success">
+      <div class="card-header bg-success text-white">
+        <h4 class="mb-0"><i class="bi bi-calculator"></i> Your Quote</h4>
+      </div>
+      <div class="card-body">
+        <table class="table table-borderless">
+          <tr>
+            <td class="text-muted">Policy Type</td>
+            <td class="fw-bold"><%= quote.policy_type %></td>
+          </tr>
+          <tr>
+            <td class="text-muted">Provider</td>
+            <td class="fw-bold"><%= quote.provider %></td>
+          </tr>
+          <tr>
+            <td class="text-muted">Coverage Amount</td>
+            <td class="fw-bold">₹<%= quote.coverage_amount ? quote.coverage_amount.toLocaleString() : 'N/A' %></td>
+          </tr>
+          <tr>
+            <td class="text-muted">Estimated Premium</td>
+            <td class="fw-bold text-success fs-4">₹<%= quote.premium_estimate %>/year</td>
+          </tr>
+          <tr>
+            <td class="text-muted">Valid Until</td>
+            <td class="fw-bold"><%= quote.valid_until %></td>
+          </tr>
+        </table>
+        <a href="/purchase/<%= quote.quote_id %>" class="btn btn-success w-100 btn-lg">
+          <i class="bi bi-cart-check"></i> Proceed to Purchase
+        </a>
+      </div>
+    </div>
+    <a href="/policies" class="btn btn-outline-secondary mt-3"><i class="bi bi-arrow-left"></i> Back to Search</a>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

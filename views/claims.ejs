@@ -1,0 +1,51 @@
+<%- include('partials/header') %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h2><i class="bi bi-clipboard-data"></i> My Claims</h2>
+  <a href="/claims/new" class="btn btn-primary"><i class="bi bi-plus-circle"></i> New Claim</a>
+</div>
+
+<% if (claims.length === 0) { %>
+  <div class="alert alert-info">
+    You haven't submitted any claims yet. <a href="/claims/new">Submit a claim</a>.
+  </div>
+<% } else { %>
+  <div class="table-responsive">
+    <table class="table table-hover shadow-sm">
+      <thead class="table-primary">
+        <tr>
+          <th>Claim ID</th>
+          <th>Policy Type</th>
+          <th>Amount</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Submitted</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% claims.forEach(c => { %>
+          <tr>
+            <td>#<%= c.claim_id %></td>
+            <td><%= c.policy_type %></td>
+            <td>₹<%= c.amount %></td>
+            <td><%= c.description ? c.description.substring(0, 50) : '' %></td>
+            <td>
+              <% if (c.status === 'submitted') { %>
+                <span class="badge bg-warning text-dark">Submitted</span>
+              <% } else if (c.status === 'under_review') { %>
+                <span class="badge bg-info">Under Review</span>
+              <% } else if (c.status === 'approved') { %>
+                <span class="badge bg-success">Approved</span>
+              <% } else { %>
+                <span class="badge bg-danger">Rejected</span>
+              <% } %>
+            </td>
+            <td><%= c.submitted_date ? new Date(c.submitted_date).toLocaleDateString() : '' %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+<% } %>
+
+<%- include('partials/footer') %>

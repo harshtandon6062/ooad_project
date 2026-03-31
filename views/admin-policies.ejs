@@ -1,0 +1,69 @@
+<%- include('partials/header') %>
+
+<h2 class="mb-4"><i class="bi bi-gear"></i> Manage Policy Templates</h2>
+
+<!-- Create new template -->
+<div class="card shadow-sm mb-4">
+  <div class="card-header bg-info text-white">
+    <h5 class="mb-0"><i class="bi bi-plus-circle"></i> Create New Policy Template</h5>
+  </div>
+  <div class="card-body">
+    <form method="POST" action="/admin/policies" class="row g-3">
+      <div class="col-md-3">
+        <label for="type" class="form-label">Type</label>
+        <select class="form-select" id="type" name="type" required>
+          <option value="vehicle_2w">2-Wheeler Vehicle</option>
+          <option value="vehicle_4w">4-Wheeler Vehicle</option>
+          <option value="health">Health Insurance</option>
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label for="provider" class="form-label">Provider</label>
+        <input type="text" class="form-control" id="provider" name="provider" value="InsureCo">
+      </div>
+      <div class="col-md-2">
+        <label for="premium" class="form-label">Premium (₹/yr)</label>
+        <input type="number" class="form-control" id="premium" name="premium" min="100" required>
+      </div>
+      <div class="col-md-2">
+        <label for="coverageAmount" class="form-label">Coverage (₹)</label>
+        <input type="number" class="form-control" id="coverageAmount" name="coverageAmount" min="1000" required>
+      </div>
+      <div class="col-md-2 d-flex align-items-end">
+        <button type="submit" class="btn btn-info w-100">Create</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Existing policies -->
+<div class="table-responsive">
+  <table class="table table-hover shadow-sm">
+    <thead class="table-info">
+      <tr>
+        <th>ID</th>
+        <th>Type</th>
+        <th>Provider</th>
+        <th>Premium</th>
+        <th>Coverage</th>
+        <th>Status</th>
+        <th>Owner</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% policies.forEach(p => { %>
+        <tr>
+          <td>#<%= p.policy_id %></td>
+          <td><%= p.type %></td>
+          <td><%= p.provider %></td>
+          <td>₹<%= p.premium %></td>
+          <td>₹<%= p.coverage_amount ? p.coverage_amount.toLocaleString() : 'N/A' %></td>
+          <td><span class="badge bg-<%= p.status === 'template' ? 'secondary' : p.status === 'active' ? 'success' : 'warning' %>"><%= p.status %></span></td>
+          <td><%= p.user_name || '—' %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</div>
+
+<%- include('partials/footer') %>
