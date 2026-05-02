@@ -30,8 +30,17 @@ public class ClaimService {
         Optional<Policy> policy = policyRepository.findById(policyId);
         Optional<User> user = userRepository.findById(userId);
 
-        if (policy.isEmpty() || user.isEmpty()) {
-            throw new RuntimeException("Policy or User not found");
+        if (policy.isEmpty()) {
+            throw new RuntimeException("Policy not found. Please enter a valid Policy ID.");
+        }
+        if (user.isEmpty()) {
+            throw new RuntimeException("User not found. Please login again.");
+        }
+        if (amount == null || amount.compareTo(BigDecimal.ZERO) <= 0) {
+            throw new RuntimeException("Claim amount must be greater than zero.");
+        }
+        if (policy.get().getUser() == null || !policy.get().getUser().getUserId().equals(userId)) {
+            throw new RuntimeException("You can only file a claim for a policy that belongs to your account.");
         }
 
         Claim claim = ClaimFactory.createClaim(policy.get(), user.get(), amount, description);

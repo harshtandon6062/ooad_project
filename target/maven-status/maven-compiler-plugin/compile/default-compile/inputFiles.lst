@@ -1,48 +1,49 @@
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/service/UserService.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/config/SecurityConfig.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/model/Policy.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/repository/ClaimRepository.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/behavioral/ClaimContext.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/model/Payment.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/model/ClaimStatus.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/behavioral/ExpiredPolicyStateImpl.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/creational/ClaimFactory.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/behavioral/StandardPremiumStrategy.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/behavioral/ApprovedClaimStateImpl.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/behavioral/PaidClaimStateImpl.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/model/PolicyStatus.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/behavioral/SuspendedPolicyStateImpl.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/behavioral/PremiumStrategy.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/service/QuoteService.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/behavioral/DiscountedPremiumStrategyImpl.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/behavioral/ActivePolicyStateImpl.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/model/UserRole.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/repository/UserRepository.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/repository/QuoteRepository.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/repository/PaymentRepository.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/behavioral/ClaimState.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/behavioral/CancelledPolicyStateImpl.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/behavioral/PremiumPlusStrategy.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/behavioral/UnderReviewClaimStateImpl.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/model/User.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/controller/DashboardController.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/service/PaymentService.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/creational/QuoteFactory.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/InsureflowApplication.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/repository/PolicyRepository.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/structural/InsuranceFacade.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/model/Quote.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/config/DataLoader.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/model/Claim.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/service/DashboardService.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/behavioral/PremiumCalculatorImpl.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/service/PolicyService.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/creational/PolicyFactory.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/behavioral/PolicyState.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/controller/AuthController.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/behavioral/PolicyContext.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/service/ClaimService.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/controller/ClaimController.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/controller/PolicyController.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/behavioral/RejectedClaimStateImpl.java
-/Users/dishan/Documents/PES/Sem_6/OOAD/miniproj/ooad_project/src/main/java/com/example/insureflow/patterns/behavioral/SubmittedClaimStateImpl.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\behavioral\PaidClaimStateImpl.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\model\User.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\model\Claim.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\repository\PolicyRepository.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\model\PolicyStatus.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\creational\PolicyFactory.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\behavioral\ClaimContext.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\behavioral\SuspendedPolicyStateImpl.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\behavioral\DiscountedPremiumStrategyImpl.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\service\UserService.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\behavioral\StandardPremiumStrategy.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\service\QuoteService.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\repository\PaymentRepository.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\behavioral\ExpiredPolicyStateImpl.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\behavioral\ClaimState.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\behavioral\PremiumCalculatorImpl.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\model\Quote.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\InsureflowApplication.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\model\ClaimStatus.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\repository\ClaimRepository.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\controller\ClaimController.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\behavioral\PolicyContext.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\service\DashboardService.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\behavioral\CancelledPolicyStateImpl.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\controller\DashboardController.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\behavioral\RejectedClaimStateImpl.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\behavioral\PolicyState.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\model\Payment.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\model\UserRole.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\creational\QuoteFactory.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\structural\InsuranceFacade.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\behavioral\UnderReviewClaimStateImpl.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\service\ClaimService.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\controller\AuthController.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\behavioral\ApprovedClaimStateImpl.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\behavioral\SubmittedClaimStateImpl.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\behavioral\ActivePolicyStateImpl.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\model\Policy.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\config\DataLoader.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\repository\UserRepository.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\behavioral\PremiumStrategy.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\repository\QuoteRepository.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\behavioral\PremiumPlusStrategy.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\patterns\creational\ClaimFactory.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\service\PolicyService.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\service\PaymentService.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\config\GlobalExceptionHandler.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\config\SecurityConfig.java
+C:\Users\Dhruv Jain\Desktop\test\src\main\java\com\example\insureflow\controller\PolicyController.java

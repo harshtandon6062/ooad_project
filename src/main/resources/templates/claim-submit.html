@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body class="bg-light">
-    <div th:insert="header.html"></div>
+    <div th:insert="~{header.html}"></div>
 
     <div class="container mt-5">
         <div class="row justify-content-center">
@@ -20,16 +20,28 @@
                         
                         <form method="POST" action="/claims/submit">
                             <div class="mb-3">
-                                <label for="policyId" class="form-label">Policy ID</label>
-                                <input type="number" class="form-control" id="policyId" name="policyId" required>
+                                <label for="policyId" class="form-label">Select Policy</label>
+                                <select class="form-select" id="policyId" name="policyId" required>
+                                    <option value="" th:if="${policyId == null}" selected disabled>Choose a policy</option>
+                                    <option th:each="policy : ${policies}"
+                                            th:value="${policy.policyId}"
+                                            th:text="${policy.policyId + ' - ' + policy.type + ' (' + policy.status + ')'}"
+                                            th:selected="${policyId == policy.policyId}">
+                                    </option>
+                                </select>
+                                <div th:if="${policies.isEmpty()}" class="form-text text-danger">
+                                    You do not have any active policies available to submit a claim.
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="amount" class="form-label">Claim Amount ($)</label>
-                                <input type="number" class="form-control" id="amount" name="amount" step="0.01" required>
+                                <input type="text" class="form-control" id="amount" name="amount" required
+                                       th:value="${amount}">
                             </div>
                             <div class="mb-3">
                                 <label for="description" class="form-label">Description</label>
-                                <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+                                <textarea class="form-control" id="description" name="description" rows="4" required
+                                          th:text="${description}"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit Claim</button>
                             <a href="/claims" class="btn btn-secondary">Cancel</a>
@@ -40,6 +52,6 @@
         </div>
     </div>
 
-    <div th:insert="footer.html"></div>
+    <div th:insert="~{footer.html}"></div>
 </body>
 </html>

@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body class="bg-light">
-    <div th:insert="header.html"></div>
+    <div th:insert="~{header.html}"></div>
 
     <h2 class="mb-4"><i class="bi bi-clipboard-data"></i> My Claims</h2>
 
@@ -33,13 +33,13 @@
                         <tr th:each="claim : ${claims}">
                             <td th:text="${claim.claimId}"></td>
                             <td th:text="${claim.policy.type}"></td>
-                            <td th:text="'$' + ${#numbers.formatDecimal(claim.amount, 1, 2)}"></td>
+                            <td th:text="${'$' + #numbers.formatDecimal(claim.amount, 1, 2)}"></td>
                             <td>
-                                <span class="badge" 
-                                      th:classappend="${claim.status == T(com.example.insureflow.model.ClaimStatus).APPROVED} ? 'bg-success' : 
-                                                       ${claim.status == T(com.example.insureflow.model.ClaimStatus).REJECTED} ? 'bg-danger' : 
-                                                       'bg-warning'" 
-                                      th:text="${claim.status}"></span>
+                                <span class="badge bg-success" th:if="${claim.status.name() == 'APPROVED'}" th:text="${claim.status}"></span>
+                                <span class="badge bg-danger" th:if="${claim.status.name() == 'REJECTED'}" th:text="${claim.status}"></span>
+                                <span class="badge bg-warning" th:if="${claim.status.name() == 'SUBMITTED'}" th:text="${claim.status}"></span>
+                                <span class="badge bg-info" th:if="${claim.status.name() == 'UNDER_REVIEW'}" th:text="${claim.status}"></span>
+                                <span class="badge bg-secondary" th:if="${claim.status.name() == 'PAID'}" th:text="${claim.status}"></span>
                             </td>
                             <td th:text="${claim.submittedDate}"></td>
                         </tr>
@@ -55,6 +55,6 @@
     <br>
     <a href="/dashboard" class="btn btn-secondary">Back to Dashboard</a>
 
-    <div th:insert="footer.html"></div>
+    <div th:insert="~{footer.html}"></div>
 </body>
 </html>
